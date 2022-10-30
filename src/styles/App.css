@@ -1,0 +1,31 @@
+.todo {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: #3F3D38;
+  
+}
+
+.title{
+  background-color: black;
+  color: white;
+  padding: 10px 0px 5px 5px;
+  font-size: 23px;
+  width: 200px;
+  height: 40px;
+}
+
+.Navbar {
+  background-color: black;
+  color: white;
+  width: 200px;
+  height: 500px;
+  text-decoration-line: none;
+  list-style: none;
+  padding: 5px 0px 0px 5px;
+  font-size: 20px;
+}
+.Navbar > li {
+  padding: 10px 20px ;
+  text-decoration: none; /*????*/
+}
