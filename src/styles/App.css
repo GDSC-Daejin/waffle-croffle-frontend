@@ -9,7 +9,7 @@
 .title{
   background-color: black;
   color: white;
-  padding: 10px 0px 5px 5px;
+  padding: 10px 0px;
   font-size: 23px;
   width: 200px;
   height: 40px;
@@ -20,12 +20,19 @@
   color: white;
   width: 200px;
   height: 500px;
-  text-decoration-line: none;
+
   list-style: none;
-  padding: 5px 0px 0px 5px;
+  
   font-size: 20px;
 }
-.Navbar > li {
-  padding: 10px 20px ;
-  text-decoration: none; /*????*/
+.navbtn {
+  width: 200px;
+  height: 45px;
+  font-size: 15px;
+  border: none;
+  color: white;
+  background-color: black;
+}
+.navbtn:hover {
+  background-color: #181818;
 }
