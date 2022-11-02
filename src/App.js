@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink, Route, Routes } from 'react-router-dom'
 import './styles/App.css'
 import Today from "./components/Today"
@@ -7,6 +7,11 @@ import All from './components/All';
 import Star from './components/Star';
 
 const App = () => {
+
+  useEffect(() => {
+    document.getElementById('Today').click();
+    return () => {};
+  }, []);
 
 
   function activeColor(elmnt, cnum) {
@@ -24,6 +29,8 @@ const App = () => {
     active.style.color = "black"
   }
   
+  
+
   return (
     <div className='todo'>
 
@@ -54,9 +61,8 @@ const App = () => {
         <Route path='/all' element={<All />} />
         <Route path='/star' element={<Star />}/>
       </Routes>
-      
+
     </div>
-    
   );
 };
 
