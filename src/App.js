@@ -4,7 +4,7 @@ import './styles/App.css'
 import Today from "./components/Today"
 import Week from "./components/Week";
 import All from './components/All';
-import Star from './components/Today copy';
+import Star from './components/Star';
 
 const App = () => {
 
