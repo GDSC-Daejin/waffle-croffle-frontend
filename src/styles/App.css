@@ -1,3 +1,7 @@
+.total{
+  margin: auto auto;
+}
+
 .todo {
   display: flex;
   justify-content: center;
@@ -10,20 +14,15 @@
   background-color: black;
   color: white;
   padding: 10px 0px;
-  font-size: 23px;
+  font-size: 20px;
   width: 200px;
   height: 40px;
 }
 
 .Navbar {
   background-color: black;
-  color: white;
   width: 200px;
   height: 500px;
-
-  list-style: none;
-  
-  font-size: 20px;
 }
 .navbtn {
   width: 200px;
@@ -32,7 +31,10 @@
   border: none;
   color: white;
   background-color: black;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
 }
 .navbtn:hover {
-  background-color: #181818;
+  background-color: #252525;
 }
