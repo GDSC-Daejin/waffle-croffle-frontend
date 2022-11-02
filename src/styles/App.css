@@ -1,5 +1,7 @@
-.total{
+body {
+  margin: 0;
   margin: auto auto;
+  height: 100%;
 }
 
 .todo {
@@ -7,7 +9,8 @@
   justify-content: center;
   align-content: center;
   background-color: #3F3D38;
-  
+  margin: 0;
+
 }
 
 .title{
@@ -24,6 +27,7 @@
   width: 200px;
   height: 500px;
 }
+
 .navbtn {
   width: 200px;
   height: 45px;

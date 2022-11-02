@@ -1,24 +1,14 @@
-.today {
-    background-color: #D2A7A7;
-    width: 550px;
-    padding: 10px;
+.page {
+    width: 500px;
+    height: 500px;
+    padding: 30px 50px;
 
 }
-
-.week {
-    background-color: #EBD49A;
-    width: 550px;
-    padding: 10px;
-
+.test {
+    background-color: white;
 }
-.all {
-    background-color: #a0cdb2;
-    width: 550px;
-    padding: 10px;
-} 
 
-.star {
-    background-color: #7DAABD;
-    width: 550px;
-    padding: 10px;
-} 
+#today {background-color: #D2A7A7;}
+#week{background-color: #EBD49A;}
+#all{background-color: #a0cdb2;}
+#star{background-color: #7DAABD;}
