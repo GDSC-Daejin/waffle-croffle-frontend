@@ -17,7 +17,7 @@ const App = () => {
 
   function activeColor(elmnt, cnum) {
     var i, navbtns, active;
-    var pallet = ["#D2A7A7", "#EBD49A", "#a0cdb2", "#7DAABD"]
+    var pallet = ["#D2A7A7", "#EBD49A", "#a0cdb2", "#a1c2cf"]
     navbtns = document.getElementsByClassName("navbtn");
     active = document.getElementById(elmnt);
 

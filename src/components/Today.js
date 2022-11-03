@@ -1,5 +1,6 @@
 import React from "react";
 import '../styles/pages.css'
+import InputTodo from "./InputTodo";
 
 const Today = () => {
     return (
@@ -7,6 +8,7 @@ const Today = () => {
             <h1>Today</h1>
             <p>홈, 그 페이지는 가장 먼저 보여지는 페이지.
             </p>
+            <InputTodo></InputTodo>
         </div>
     )
 }
