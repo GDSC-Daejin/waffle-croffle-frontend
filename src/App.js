@@ -1,10 +1,12 @@
 import React from 'react';
 import { NavLink, Route, Routes } from 'react-router-dom'
 import './styles/App.css'
-import Today from "./components/Today"
-import Week from "./components/Week";
-import All from './components/All';
-import Star from './components/Star';
+import Today from "./components/Menu/TopMenu/Today"
+import Week from "./components/Menu/TopMenu/Week";
+import All from './components/Menu/TopMenu/All';
+import Star from './components/Menu/TopMenu/Star';
+import logo from './assets/투데이로고.svg';
+import Menu from "./components/Menu/Menu";
 
 const App = () => {
 
@@ -25,37 +27,39 @@ const App = () => {
   }
   
   return (
-    <div className='todo'>
-
-      {/*왼쪽 검은부분*/}
-      <div> 
-        <div className="title">
-          Today's croffle</div>
-        <div className="Navbar">
-          <NavLink to="/" >
-            <button className='navbtn' id="Today" onClick={() => activeColor('Today', 0)}>Today</button>
-          </NavLink><br/>
-          <NavLink to="/week" >
-            <button className='navbtn' id="Week" onClick={() => activeColor('Week', 1)}>Week</button>
-          </NavLink>
-          <NavLink to="/all" >
-            <button className='navbtn' id="All" onClick={() => activeColor('All', 2)}>All</button>
-          </NavLink>
-          <NavLink to="/star" >
-            <button className='navbtn' id="Star" onClick={() => activeColor('Star', 3)}>Star</button>
-          </NavLink>
-        </div>
-      </div>
-
-      {/*오른쪽*/}
-      <Routes>
-        <Route exact path="/" element={<Today />} />
-        <Route path="/week" element={<Week />} />
-        <Route path='/all' element={<All />} />
-        <Route path='/star' element={<Star />}/>
-      </Routes>
-      
-    </div>
+      <Menu />
+    // <div className='todo'>
+    //
+    //   {/*왼쪽 검은부분*/}
+    //   <div>
+    //     <div className="title">
+    //       <img className="titleLogo" src={logo}/>
+    //       Today's croffle</div>
+    //     <div className="Navbar">
+    //       <NavLink to="/" >
+    //         <button className='navbtn' id="Today" onClick={() => activeColor('Today', 0)}>Today</button>
+    //       </NavLink><br/>
+    //       <NavLink to="/week" >
+    //         <button className='navbtn' id="Week" onClick={() => activeColor('Week', 1)}>Week</button>
+    //       </NavLink>
+    //       <NavLink to="/all" >
+    //         <button className='navbtn' id="All" onClick={() => activeColor('All', 2)}>All</button>
+    //       </NavLink>
+    //       <NavLink to="/star" >
+    //         <button className='navbtn' id="Star" onClick={() => activeColor('Star', 3)}>Star</button>
+    //       </NavLink>
+    //     </div>
+    //   </div>
+    //
+    //   {/*오른쪽*/}
+    //   <Routes>
+    //     <Route exact path="/" element={<Today />} />
+    //     <Route path="/week" element={<Week />} />
+    //     <Route path='/all' element={<All />} />
+    //     <Route path='/star' element={<Star />}/>
+    //   </Routes>
+    //
+    // </div>
     
   );
 };
