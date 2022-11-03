@@ -14,12 +14,15 @@ body {
 }
 
 .title{
+  display: flex;
   background-color: black;
   color: white;
   padding: 10px 0px;
   font-size: 20px;
   width: 200px;
   height: 40px;
+  justify-content: center;
+  align-items: center;
 }
 
 .Navbar {

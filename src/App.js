@@ -5,10 +5,11 @@ import Today from "./components/Today"
 import Week from "./components/Week";
 import All from './components/All';
 import Star from './components/Star';
+import {logo, allsvg, weeksvg, starsvg, todaysvg} from './imgs/ExportSvg';
 
 const App = () => {
 
-  useEffect(() => {
+  useEffect(() => { // 처음 실행 화면 => today 페이지 출력
     document.getElementById('Today').click();
     return () => {};
   }, []);
@@ -20,12 +21,12 @@ const App = () => {
     navbtns = document.getElementsByClassName("navbtn");
     active = document.getElementById(elmnt);
 
-    for (i = 0; i < navbtns.length; i++) {
+    for (i = 0; i < navbtns.length; i++) {   // active가 아닌 것들 초기화
       navbtns[i].style.backgroundColor = "";
       navbtns[i].style.color = "white";
     }
 
-    active.style.backgroundColor = pallet[cnum];
+    active.style.backgroundColor = pallet[cnum];  // active인 것(클릭된 것) 색 변경
     active.style.color = "black"
   }
   
@@ -37,19 +38,23 @@ const App = () => {
       {/*왼쪽 검은부분*/}
       <div> 
         <div className="title">
-          Today's croffle</div>
+          <img src={logo} width='37px'/> &nbsp;Today's croffle</div>
         <div className="Navbar">
           <NavLink to="/" >
-            <button className='navbtn' id="Today" onClick={() => activeColor('Today', 0)}>Today</button>
+            <button className='navbtn' id="Today" onClick={() => activeColor('Today', 0)}>
+              <img src={todaysvg} /> &nbsp;&nbsp;&nbsp;&nbsp;Today</button>
           </NavLink><br/>
           <NavLink to="/week" >
-            <button className='navbtn' id="Week" onClick={() => activeColor('Week', 1)}>Week</button>
+            <button className='navbtn' id="Week" onClick={() => activeColor('Week', 1)}>
+              <img src={weeksvg} /> &nbsp;&nbsp;&nbsp;&nbsp;Week</button>
           </NavLink>
           <NavLink to="/all" >
-            <button className='navbtn' id="All" onClick={() => activeColor('All', 2)}>All</button>
+            <button className='navbtn' id="All" onClick={() => activeColor('All', 2)}>
+              <img src={allsvg}/> &nbsp;&nbsp;&nbsp;&nbsp;All</button>
           </NavLink>
           <NavLink to="/star" >
-            <button className='navbtn' id="Star" onClick={() => activeColor('Star', 3)}>Star</button>
+            <button className='navbtn' id="Star" onClick={() => activeColor('Star', 3)}>
+              <img src={starsvg} /> &nbsp;&nbsp;&nbsp;&nbsp;Star</button>
           </NavLink>
         </div>
       </div>
