@@ -35,10 +35,13 @@ body {
   border: none;
   color: white;
   background-color: black;
-  outline: none;
   cursor: pointer;
-  padding: 14px 16px;
+  padding: 14px 16px 14px 30px;
+  text-align: left;
 }
 .navbtn:hover {
   background-color: #252525;
+}
+#Star {
+  border-bottom: 1px solid gray;
 }
