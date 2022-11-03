@@ -3,7 +3,7 @@ import '../../../styles/pages.css'
 
 const All = () => {
     return (
-        <div className="all">
+        <div className="page" id="all">
             <h1>All</h1>
             <p>홈, 그 페이지는 가장 먼저 보여지는 페이지.</p>
         </div>
