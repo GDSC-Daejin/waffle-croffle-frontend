@@ -1,9 +1,11 @@
 import styled from "styled-components";
 
-export const TodoWrapper = styled.div`
-  margin: 100px 100px;
+export const Wrapper = styled.div`
+  margin: 100px 100px 100px 100px;
   background-color: #3F3D38;
   display: flex;
+  width: 900px;
+  height: 600px;
 `;
 
 
@@ -117,9 +119,88 @@ export const StarName = styled.div`
 `;
 
 
-
+//투두리스트
 export const TodoListWrapper = styled.div`
-  width: 500px;
+  width: 600px;
   height: 600px;
   background-color: #a0cdb2;
+`;
+
+//날짜
+export const DateWrapper = styled.div`
+  display: flex;
+  margin: 70px 0 20px 70px;
+`;
+
+export const Date = styled.div`
+  font-family: SeoulHangang, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #212121;
+`;
+
+export const DateImgL = styled.img`
+  margin-right: 20px;
+`;
+export const DateImgR = styled.img`
+  rotate: 180deg;
+  margin-left: 20px;
+`;
+
+//리스트
+export const ListWrapper = styled.div`
+
+`;
+
+export const TodoWrapper = styled.div`
+  background-color: #212121;
+  border-radius: 8px;
+  width: 450px;
+  height: 60px;
+  margin: 10px auto;
+  
+`;
+
+//인풋
+export const AddWrapper = styled.div`
+  margin: 195px auto 10px auto;
+  display: flex;
+`;
+
+export const AddInPutWrapper = styled.div`
+  display: flex;
+  background-color: #212121;
+  width: 380px;
+  height: 40px;
+  border-radius: 5px;
+  padding: 7px 15px;
+  margin: 0 15px 0 65px;
+`;
+
+export const AddInput = styled.input`
+  width: 340px;
+  background-color: #212121;
+  color: #eeeeee;
+  outline: none;
+  border: 0;
+  font-size: 13px;
+`;
+
+export const CategoryImg = styled.img`
+  width: 14px;
+  margin-right: 17px;
+`;
+
+export const CalendarImg = styled.img`
+  width: 20px;
+`;
+
+export const AddBtn = styled.button`
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  font-size: 40px;
+ 
+  background-color: #4B725F;
 `;

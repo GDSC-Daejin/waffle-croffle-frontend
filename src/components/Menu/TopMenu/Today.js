@@ -1,7 +1,7 @@
 import React from "react";
 import '../../../styles/pages.css'
-import '../styles/pages.css'
-import InputTodo from "./InputTodo";
+import InputTodo from "../../InputTodo";
+// import '../styles/pages.css'
 
 const Today = () => {
     return (

@@ -4,9 +4,9 @@
   src: url("../font/SeoulHangangM.ttf");
 }
 .total{
-body {
+/*body {*/
   margin: 0;
-  margin: auto auto;
+  /*margin: auto auto;*/
   height: 100%;
 }
 
