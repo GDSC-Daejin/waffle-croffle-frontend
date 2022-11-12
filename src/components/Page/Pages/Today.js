@@ -7,10 +7,10 @@ import {
   DateWrapper,
   ListWrapper,
   TodayPageWrapper,
-  TodoWrapper,
 } from '../PageStyle';
-import date from '../../../assets/DateImg.svg';
+import date from '../../../assets/pageSvg/DateImg.svg';
 import Add from '../Add';
+import Todo from '../Todo';
 
 const Today = () => {
   return (
@@ -21,10 +21,8 @@ const Today = () => {
         <DateImgR src={date} />
       </DateWrapper>
       <ListWrapper>
-        <TodoWrapper></TodoWrapper>
-        <TodoWrapper></TodoWrapper>
-        <TodoWrapper></TodoWrapper>
-        <TodoWrapper></TodoWrapper>
+        <Todo />
+        <Todo />
       </ListWrapper>
       <Add />
     </TodayPageWrapper>

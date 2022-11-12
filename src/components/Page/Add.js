@@ -1,6 +1,6 @@
 import React from 'react';
-import categoryLogo from '../../assets/category.svg';
-import weekLogo from '../../assets/week.svg';
+import { calenderLogo, categoryLogo } from '../../assets/pageSvg/ExportSvg';
+
 import {
   AddWrapper,
   AddInPutWrapper,
@@ -16,7 +16,7 @@ const Add = () => {
       <AddInPutWrapper>
         <AddInput type="text" placeholder="입려어어억ㄱ" />
         <CategoryImg src={categoryLogo} alt="category" />
-        <CalenderImg src={weekLogo} alt="calender" />
+        <CalenderImg src={calenderLogo} alt="calender" />
       </AddInPutWrapper>
       <AddBtn>+</AddBtn>
     </AddWrapper>

@@ -1,7 +1,12 @@
 import React, { useEffect } from 'react';
 import { TopMenuBtn, TopMenuWrapper } from './MenuStyle';
 import { NavLink } from 'react-router-dom';
-import { allLogo, weekLogo, starLogo, todayLogo } from '../../assets/ExportSvg';
+import {
+  allLogo,
+  weekLogo,
+  starLogo,
+  todayLogo,
+} from '../../assets/menuSvg/ExportSvg';
 import './MenuStyle';
 
 const TopMenu = () => {
