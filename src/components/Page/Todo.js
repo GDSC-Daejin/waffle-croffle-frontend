@@ -23,6 +23,9 @@ const Todo = () => {
   const onClickStar = () => {
     setStar(!isStar);
   };
+
+const [isTodo='22', setTodo] = useState();
+
   return (
     <TodoWrapper>
       <TodoImg
@@ -34,8 +37,8 @@ const Todo = () => {
         color={isCheck ? '#999999' : '#f1f1f1'}
         deco={isCheck ? 'line-through' : 'none'}
       >
-        <TodoContent>잉여글자</TodoContent>
-        <TodoCategory>잉여카테고리</TodoCategory>
+        <TodoContent>{isTodo}</TodoContent>
+        <TodoCategory onClick={()=> setTodo('하이')}>잉여카테고리</TodoCategory>
       </TodoText>
       <TodoImg src={detail} />
       <TodoImg src={isStar ? star : nostar} onClick={onClickStar} />
