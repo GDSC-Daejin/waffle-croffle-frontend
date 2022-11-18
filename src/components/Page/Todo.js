@@ -13,6 +13,9 @@ import {
   star,
   nostar,
 } from '../../assets/pageSvg/ExportSvg';
+import { atom, useRecoilState } from 'recoil';
+import add from './Add';
+import { addTodo, viewTodo } from '../../atom/atom';
 
 const Todo = () => {
   const [isCheck, setCheck] = useState(false);
@@ -24,7 +27,7 @@ const Todo = () => {
     setStar(!isStar);
   };
 
-const [isTodo='22', setTodo] = useState();
+  const [isAddTodo, setAddTodo] = useRecoilState(viewTodo);
 
   return (
     <TodoWrapper>
@@ -37,8 +40,8 @@ const [isTodo='22', setTodo] = useState();
         color={isCheck ? '#999999' : '#f1f1f1'}
         deco={isCheck ? 'line-through' : 'none'}
       >
-        <TodoContent>{isTodo}</TodoContent>
-        <TodoCategory onClick={()=> setTodo('하이')}>잉여카테고리</TodoCategory>
+        <TodoContent onClick={()=>{console.log(isAddTodo)}}>하하</TodoContent>
+        <TodoCategory>잉여카테고리</TodoCategory>
       </TodoText>
       <TodoImg src={detail} />
       <TodoImg src={isStar ? star : nostar} onClick={onClickStar} />

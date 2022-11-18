@@ -9,37 +9,37 @@ import {
   CalenderImg,
   AddBtn,
 } from './PageStyle';
+import { useRecoilState } from 'recoil';
+import { addTodo, viewTodo } from '../../atom/atom';
 
-
-function Add(){
-  const [isTodo, setTodo] = useState();
+const Add = () =>{
+  const [isAddTodo, setAddTodo] = useRecoilState(addTodo);
 
   const getValue = e => {
     const { name, value } = e.target;
-    setTodo({
-      ...isTodo,
+    setAddTodo({
+      ...isAddTodo,
       [name]: value
     })
-    console.log(isTodo);
+    console.log(isAddTodo);
   };
 
-  const [isView, setView] = useState([]);
+  const [isView, setView] = useRecoilState(viewTodo);
+
   const submit = () => {
-    setView(isTodo({...isTodo}))
+    setView({...isAddTodo})
     console.log(isView)
   }
 
 return (
     <AddWrapper>
       <AddInPutWrapper>
-        <AddInput type="text" placeholder="입려어어억ㄱ" onChange={getValue} name='title' />
+        <AddInput type="text" placeholder="입려어어억ㄱ" onChange={getValue} name='content' />
         <CategoryImg src={categoryLogo} alt="category" />
         <CalenderImg src={calenderLogo} alt="calender" />
       </AddInPutWrapper>
-      <AddBtn Onclick={()=>{
-        // setView(isView.concat({...isTodo}))
-        console.log(isView);
-      }}>+</AddBtn>
+      <button onClick={submit}>버튼</button>
+      <AddBtn Onclick={()=>{console.log(isAddTodo)}}>+</AddBtn>
     </AddWrapper>
   );
 };

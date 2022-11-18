@@ -18,9 +18,16 @@ const Today = () => {
       <DateWrapper>
         <DateImgL src={date} />
         <Date>2022.11.03 목요일</Date>
+
         <DateImgR src={date} />
       </DateWrapper>
       <ListWrapper>
+        <Todo />
+        <Todo />
+        <Todo />
+        <Todo />
+        <Todo />
+        <Todo />
         <Todo />
         <Todo />
       </ListWrapper>
