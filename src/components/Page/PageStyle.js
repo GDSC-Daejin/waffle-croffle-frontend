@@ -3,7 +3,7 @@ import styled from 'styled-components';
 //날짜
 export const DateWrapper = styled.div`
   display: flex;
-  margin: 20px;
+  margin: 15px;
 `;
 
 export const Date = styled.div`
@@ -47,8 +47,27 @@ export const StarPageWrapper = styled(PageWrapper)`
 
 // TodoList
 export const ListWrapper = styled.div`
-  height: 340px;
-  margin: 10px;
+  height: 370px;
+  margin: 1px 0 15px 0;
+  max-height: 370px;
+  overflow-y: scroll;
+
+  //::-webkit-scrollbar {
+  //  display: none /* Chrome , Safari , Opera */
+  //} 
+  ::-webkit-scrollbar {
+    width: 6px;  /* 스크롤바의 너비 */
+  } 
+  ::-webkit-scrollbar-thumb {
+    height: 30%; /* 스크롤바의 길이 */
+    background: #4b725f; /* 스크롤바의 색상 */
+    border-radius: 10px;
+  } 
+  ::-webkit-scrollbar-track {
+    background: #212121;
+    border-radius: 11px;
+  }
+    //background: rgba(102, 102, 102, .1);  /*스크롤바 뒷 배경 색상*/
 `;
 export const TodoWrapper = styled.div`
   display: flex;
