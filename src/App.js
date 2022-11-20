@@ -8,7 +8,6 @@ import { RecoilRoot } from 'recoil';
 const App = () => {
   return (
     <RecoilRoot>
-      <body>
       <TodaysCroffle>
         <GlobalStyle />
         <MenuWapper>
@@ -17,7 +16,6 @@ const App = () => {
         </MenuWapper>
         <Page />
       </TodaysCroffle>
-      </body>
     </RecoilRoot>
   );
 };

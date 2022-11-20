@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import {
   TodoWrapper,
   TodoImg,
@@ -29,6 +30,15 @@ const Todo = () => {
 
   const [isAddTodo, setAddTodo] = useRecoilState(viewTodo);
 
+  async function getList() {
+    try {
+      const response = await axios.get('http://localhost:9092/api/todos');
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   return (
     <TodoWrapper>
       <TodoImg
@@ -41,7 +51,7 @@ const Todo = () => {
         deco={isCheck ? 'line-through' : 'none'}
       >
         <TodoContent onClick={()=>{console.log(isAddTodo)}}>하하</TodoContent>
-        <TodoCategory>잉여카테고리</TodoCategory>
+        <TodoCategory onClick={getList}>잉여카테고리</TodoCategory>
       </TodoText>
       <TodoImg src={detail} />
       <TodoImg src={isStar ? star : nostar} onClick={onClickStar} />
