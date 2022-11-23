@@ -1,5 +1,5 @@
 import React from 'react';
-import { StarPageWrapper } from '../PageStyle';
+import { StarPageWrapper } from '../PagesStyle';
 
 const Star = () => {
   return (

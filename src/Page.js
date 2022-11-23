@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Today from './Pages/Today';
-import Week from './Pages/Week';
-import All from './Pages/All';
-import Star from './Pages/Star';
+import Today from './pages/Today';
+import Week from './pages/Week';
+import All from './pages/All';
+import Star from './pages/Star';
 
 const Page = () => {
   return (

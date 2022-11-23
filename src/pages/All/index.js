@@ -1,5 +1,5 @@
 import React from 'react';
-import { AllPageWrapper } from '../PageStyle';
+import { AllPageWrapper } from '../PagesStyle';
 
 const All = () => {
   return (
