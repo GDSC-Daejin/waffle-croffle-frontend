@@ -25,7 +25,6 @@ const Todo = () => {
   };
 
   const [isTodo = '22', setTodo] = useState();
-
   return (
     <TodoWrapper>
       <TodoImg

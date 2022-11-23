@@ -25,6 +25,7 @@ export const ListWrapper = styled.div`
   margin: 1px 0 15px 0;
   max-height: 370px;
   overflow-y: auto;
+
   //::-webkit-scrollbar {
   //  display: none /* Chrome , Safari , Opera */
   //}
