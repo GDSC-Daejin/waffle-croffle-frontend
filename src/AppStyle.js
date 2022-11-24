@@ -14,7 +14,9 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const TodaysCroffle = styled.div`
-  margin: 20% auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   display: flex;
   height: 560px;
   justify-content: center;
