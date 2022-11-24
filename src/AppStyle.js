@@ -17,6 +17,7 @@ export const TodaysCroffle = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   height: 560px;
   justify-content: center;
