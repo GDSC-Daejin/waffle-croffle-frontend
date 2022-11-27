@@ -6,7 +6,7 @@ import {
   TodoText,
   TodoContent,
   TodoCategory,
-} from './PageStyle';
+} from './styled';
 import {
   check,
   checked,
@@ -17,6 +17,7 @@ import {
 import { atom, useRecoilState } from 'recoil';
 import add from './Add';
 import { addTodo, viewTodo } from '../../atom/atom';
+} from '../../../assets/pageSvg/ExportSvg';
 
 const Todo = () => {
   const [isCheck, setCheck] = useState(false);
@@ -39,6 +40,8 @@ const Todo = () => {
     }
   }
 
+  const [isTodo = '22', setTodo] = useState();
+
   return (
     <TodoWrapper>
       <TodoImg
@@ -52,6 +55,10 @@ const Todo = () => {
       >
         <TodoContent onClick={()=>{console.log(isAddTodo)}}>하하</TodoContent>
         <TodoCategory onClick={getList}>잉여카테고리</TodoCategory>
+        <TodoContent>{isTodo}</TodoContent>
+        <TodoCategory onClick={() => setTodo('하이')}>
+          잉여카테고리
+        </TodoCategory>
       </TodoText>
       <TodoImg src={detail} />
       <TodoImg src={isStar ? star : nostar} onClick={onClickStar} />

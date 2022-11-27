@@ -1,16 +1,10 @@
 import React from 'react';
 
-import {
-  Date,
-  DateImgL,
-  DateImgR,
-  DateWrapper,
-  ListWrapper,
-  TodayPageWrapper,
-} from '../PageStyle';
-import date from '../../../assets/pageSvg/DateImg.svg';
-import Add from '../Add';
-import Todo from '../Todo';
+import { Date, DateImgL, DateImgR, DateWrapper } from './styled';
+import { TodayPageWrapper, ListWrapper } from '../PagesStyle';
+import date from '../../assets/pageSvg/DateImg.svg';
+import Add from '../../components/page/Add';
+import Todo from '../../components/page/Todo';
 
 const Today = () => {
   return (

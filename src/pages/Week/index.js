@@ -1,5 +1,5 @@
 import React from 'react';
-import { WeekPageWrapper } from '../PageStyle';
+import { WeekPageWrapper } from '../PagesStyle';
 
 const Week = () => {
   return (
