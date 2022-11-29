@@ -1,6 +1,6 @@
 import React from 'react';
-import { TitleLogo, TitleName, TitleWrapper } from './MenuStyle';
-import { logo } from '../../assets/menuSvg/ExportSvg';
+import { TitleLogo, TitleName, TitleWrapper } from './styled';
+import { logo } from '../../../assets/menuSvg/ExportSvg';
 
 const Title = () => {
   return (

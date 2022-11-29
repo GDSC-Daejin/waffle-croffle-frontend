@@ -1,17 +1,13 @@
 import React from 'react';
-import { GlobalStyle, TodaysCroffle, MenuWapper } from './AppStyle';
-import TopMenu from './components/menu/TopMenu';
-import Title from './components/menu/Title';
+import { GlobalStyle, TodaysCroffle } from './AppStyle';
+import Menu from './components/menu';
 import Page from './Page';
 
 const App = () => {
   return (
     <TodaysCroffle>
       <GlobalStyle />
-      <MenuWapper>
-        <Title />
-        <TopMenu />
-      </MenuWapper>
+      <Menu />
       <Page />
     </TodaysCroffle>
   );

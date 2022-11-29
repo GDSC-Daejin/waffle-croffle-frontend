@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react';
-import { TopMenuBtn, TopMenuWrapper } from './MenuStyle';
+import { TopMenuBtn, TopMenuWrapper } from './styled.js';
 import { NavLink } from 'react-router-dom';
 import {
   allLogo,
   weekLogo,
   starLogo,
   todayLogo,
-} from '../../assets/menuSvg/ExportSvg';
-import './MenuStyle';
+} from '../../../assets/menuSvg/ExportSvg';
 
 const TopMenu = () => {
   useEffect(() => {
