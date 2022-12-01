@@ -12,7 +12,7 @@ import {
 import axios from 'axios';
 
 function Add() {
-  const [isTodo, setTodo] = useState();
+  const [isTodo, setTodo] = useState("");
 
   const getValue = (e) => {
     const { name, value } = e.target;
@@ -24,12 +24,11 @@ function Add() {
   };
 
   const [isView, setView] = useState([]);
-  const submit = () => {
-    setView(isTodo({ ...isTodo }));
-    console.log(isView);
-    axios.post('/naver.com', {
-      content:[isView]
-    }).then(function(response){
+  const onsubmit = () => {
+    // setView(isTodo({ ...isTodo }));
+    // console.log(isView);
+    axios.post('http://localhost:9092/api/todos', isTodo
+    ).then(function(response){
       console.log('ok')
     })
       .catch(function( error){
@@ -39,7 +38,7 @@ function Add() {
 
   const postTodo = async () => {
     try{
-      const result = await axios.post('/',{content: [isView]})
+      const result = await axios.post('http://localhost:9092/v3/api-docs/api/todos')
     }
     catch (e) {
       console.log('error', e)
@@ -62,7 +61,7 @@ function Add() {
         // Onclick={() => {
         //   // setView(isView.concat({...isTodo}))
         //   console.log(isView);
-      onClick={postTodo}
+      onClick={onsubmit}
         //}}
       >
         +

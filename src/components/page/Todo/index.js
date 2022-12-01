@@ -14,7 +14,7 @@ import {
   nostar,
 } from '../../../assets/pageSvg/ExportSvg';
 
-const Todo = () => {
+const Todo = ({users}) => {
   const [isCheck, setCheck] = useState(false);
   const [isStar, setStar] = useState(false);
   const onClickImg = () => {
@@ -23,6 +23,7 @@ const Todo = () => {
   const onClickStar = () => {
     setStar(!isStar);
   };
+
 
   const [isTodo = '22', setTodo] = useState();
   return (
@@ -37,8 +38,8 @@ const Todo = () => {
         deco={isCheck ? 'line-through' : 'none'}
       >
         <TodoContent>{isTodo}</TodoContent>
-        <TodoCategory onClick={() => setTodo('하이')}>
-          잉여카테고리
+        <TodoCategory>
+          카테고리
         </TodoCategory>
       </TodoText>
       <TodoImg src={detail} />
