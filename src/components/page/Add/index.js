@@ -9,6 +9,7 @@ import {
   CalenderImg,
   AddBtn,
 } from './styled';
+import axios from 'axios';
 
 function Add() {
   const [isTodo, setTodo] = useState();
@@ -26,7 +27,24 @@ function Add() {
   const submit = () => {
     setView(isTodo({ ...isTodo }));
     console.log(isView);
+    axios.post('/naver.com', {
+      content:[isView]
+    }).then(function(response){
+      console.log('ok')
+    })
+      .catch(function( error){
+      console.log('error')
+    })
   };
+
+  const postTodo = async () => {
+    try{
+      const result = await axios.post('/',{content: [isView]})
+    }
+    catch (e) {
+      console.log('error', e)
+    }
+  }
 
   return (
     <AddWrapper>
@@ -35,16 +53,17 @@ function Add() {
           type="text"
           placeholder="입려어어억ㄱ"
           onChange={getValue}
-          name="title"
+          name="content"
         />
         <CategoryImg src={categoryLogo} alt="category" />
         <CalenderImg src={calenderLogo} alt="calender" />
       </AddInPutWrapper>
       <AddBtn
-        Onclick={() => {
-          // setView(isView.concat({...isTodo}))
-          console.log(isView);
-        }}
+        // Onclick={() => {
+        //   // setView(isView.concat({...isTodo}))
+        //   console.log(isView);
+      onClick={postTodo}
+        //}}
       >
         +
       </AddBtn>

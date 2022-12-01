@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { GlobalStyle, TodaysCroffle, MenuWapper } from './AppStyle';
 import TopMenu from './components/menu/TopMenu';
 import Title from './components/menu/Title';
@@ -12,7 +12,7 @@ const App = () => {
         <Title />
         <TopMenu />
       </MenuWapper>
-      <Page />
+      <Page/>
     </TodaysCroffle>
   );
 };
