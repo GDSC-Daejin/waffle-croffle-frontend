@@ -15,3 +15,8 @@ export const CategoryBtn = styled.button`
   padding: 14px 16px 14px 70px;
   text-align: left;
 `;
+export const TrashLogo = styled.img`
+  position: absolute;
+  left: 150px;
+  cursor: default;
+`;

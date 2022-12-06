@@ -1,22 +1,49 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { CategoryWrapper, CategoryBtn } from './styled.js';
+import { CategoryWrapper, CategoryBtn, TrashLogo } from './styled.js';
+import { trashLogo } from '../../../assets/menuSvg/ExportSvg.js';
 
-const Week = () => {
+const Category = () => {
+  const [get, setGet] = useState([]);
+
+  const mouseOver = (e) => {
+    e.target.style.visibility = 'visible';
+  };
+
+  useEffect(() => {
+    getCategory();
+    return () => {};
+  }, []);
+
   async function getCategory() {
     try {
       const response = await axios.get('http://localhost:9092/');
-      console.log(response);
+      setGet(response.data);
     } catch (error) {
       console.error(error);
     }
   }
+  function deleteCategory(id) {
+    axios.delete('http://localhost:9092/' + id);
+    getCategory();
+  }
+
   return (
     <CategoryWrapper>
-      <CategoryBtn>dkdk</CategoryBtn>
-      <CategoryBtn>아아아</CategoryBtn>
+      {get.map((todo) => {
+        return (
+          <CategoryBtn key={todo.categoryId} onMouseOver={mouseOver}>
+            {todo.categoryTitle}
+            <TrashLogo
+              src={trashLogo}
+              alt="trash"
+              onClick={() => deleteCategory(todo.categoryId)}
+            />
+          </CategoryBtn>
+        );
+      })}
     </CategoryWrapper>
   );
 };
 
-export default Week;
+export default Category;

@@ -6,7 +6,7 @@ export const NewCategoryBtn = styled.button`
   font-family: SeoulHangang, sans-serif;
   font-size: 17px;
   color: white;
-  background-color: gray;
+  background-color: black;
   text-align: center;
   float: bottom;
 `;

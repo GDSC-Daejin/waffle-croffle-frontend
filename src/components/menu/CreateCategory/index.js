@@ -19,9 +19,10 @@ const CreateCategory = () => {
   const addCategory = () => {
     //내용이 입력되었으면 TODO 추가
     if (content) {
-      postCategoryApi(content);
-      setContent('');
+      postCategoryApi(content); //추가하고
+      setContent(''); //내용 초기화하고
       console.log(content);
+      handleModal(); // 모달창 닫고
     } else {
       //내용이 없으면 알림
       alert('내용을 입력해주세요.');
