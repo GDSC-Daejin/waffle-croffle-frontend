@@ -7,6 +7,7 @@ import {
   CloseBtn,
   CategoryInput,
   CategoryTag,
+  CreateBtn,
 } from './styled';
 
 const CreateCategory = () => {
@@ -64,7 +65,9 @@ const CreateCategory = () => {
               onChange={(e) => setContent(e.target.value)}
               onKeyPress={handleOnKeyPress} //엔터를 누르면 addTodoHandler를 실행
             ></CategoryInput>
-            <button onClick={addCategory}>확인</button>
+            <br />
+            <br />
+            <CreateBtn onClick={addCategory}>확인</CreateBtn>
           </ModalView>
         </ModalBackdrop>
       ) : null}

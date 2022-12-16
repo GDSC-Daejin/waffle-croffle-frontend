@@ -51,3 +51,13 @@ export const ModalBackdrop = styled.div`
   width: 100%;
   background: rgba(0, 0, 0, 0.5);
 `;
+export const CreateBtn = styled.button`
+  color: white;
+  background-color: #212121;
+  width: 70px;
+  height: 32px;
+  float: right;
+  border-radius: 3px;
+  outline: none;
+  border: 0;
+`;
