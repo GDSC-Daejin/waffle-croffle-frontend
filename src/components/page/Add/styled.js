@@ -27,11 +27,26 @@ export const AddInput = styled.input`
 
 export const CategoryImg = styled.img`
   width: 14px;
-  margin-right: 17px;
+  padding: 0px 5px;
+  margin-left: 20px;
 `;
 
-export const CalenderImg = styled.img`
-  width: 20px;
+// 스타일 더 추가하기 (할 수 있다면,,)
+export const Select = styled.select`
+  height: 35px;
+  background: #212121;
+  color: white;
+  font-size: 13px;
+  border: none;
+  margin-top: 2px;
+  
+  option {
+    color: white
+    background: #212121;
+    display: flex;
+    white-space: pre; 
+    min-height: 20px;
+  }
 `;
 
 export const AddBtn = styled.button`
