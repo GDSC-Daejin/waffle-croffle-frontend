@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { calenderLogo, categoryLogo } from '../../../assets/pageSvg/ExportSvg';
 
 import {
   AddWrapper,
   AddInPutWrapper,
   AddInput,
-  CategoryImg,
-  CalenderImg,
   Select,
   AddBtn,
 } from './styled';
