@@ -1,10 +1,28 @@
 import styled from 'styled-components';
 
 export const CategoryWrapper = styled.div`
+  width: 197px;
   height: 270px;
+  max-height: 270px;
+  overflow-y: auto;
+  //::-webkit-scrollbar {
+  //  display: none /* Chrome , Safari , Opera */
+  //}
+  ::-webkit-scrollbar {
+    width: 5px; /* 스크롤바의 너비 */
+  }
+  ::-webkit-scrollbar-thumb {
+    height: 30%; /* 스크롤바의 길이 */
+    background: rgba(102, 102, 102, 1); /* 스크롤바의 색상 */
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgba(65, 65, 65, 0.5);
+    border-radius: 11px;
+  }
 `;
 export const CategoryBtn = styled.button`
-  width: 200px;
+  width: 180px;
   height: 45px;
   font-size: 16px;
   border: none;
@@ -12,13 +30,13 @@ export const CategoryBtn = styled.button`
   background-color: black;
   cursor: pointer;
   font-family: 'SeoulHangang', sans-serif;
-  padding: 14px 16px 14px 70px;
+  padding: 14px 16px 14px 30px;
   text-align: left;
 `;
 export const TrashLogo = styled.img`
-  position: absolute;
-  left: 150px;
+  float: left;
   cursor: default;
+  margin-right: 25px;
 `;
 
 // createCategory style
@@ -31,6 +49,7 @@ export const NewCategoryBtn = styled.button`
   background-color: black;
   text-align: center;
   float: bottom;
+  margin-top: 7px;
 `;
 
 export const ModalView = styled.div`
