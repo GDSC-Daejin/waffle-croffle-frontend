@@ -41,6 +41,16 @@ const Today = () => {
       .then((res) => setUsers(res.data));
   }, []);
 
+  const todayTime = () => {
+    let date = new Date();
+    let year = date.getFullYear();
+    let todayMonth = date.getMonth() + 1;
+    let todayDate = date.getDate()
+    const week = ['일', '월', '화', '수', '목', '금', '토'];
+    let dayOfWeek = week[date.getDay()];
+    return year + '년' + todayMonth + '월' + todayDate + '일' + dayOfWeek + '요일';
+  }
+
   return (
     <TodayPageWrapper>
       {/*<>*/}
@@ -60,7 +70,7 @@ const Today = () => {
       {/*</div>*/}
       <DateWrapper>
         <DateImgL src={date} />
-        <Date>2022.11.03 목요일</Date>
+        <Date>2022.12.25 일요일</Date>
         <DateImgR src={date} />
       </DateWrapper>
       <ListWrapper>
@@ -69,26 +79,7 @@ const Today = () => {
             {users.map((user) => {
               return (
                 <div key={user.id}>
-                  {/*{user.content}*/}
-                  <TodoWrapper>
-                    <TodoImg
-                      src={isCheck ? checked : check}
-                      onClick={onClickImg}
-                      alt="check"
-                    />
-                    <TodoText
-                      color={isCheck ? '#999999' : '#f1f1f1'}
-                      deco={isCheck ? 'line-through' : 'none'}
-                    >
-                      <TodoContent>{user.content}</TodoContent>
-                      <TodoCategory>카테고리</TodoCategory>
-                    </TodoText>
-                    <TodoImg src={detail} />
-                    <TodoImg
-                      src={isStar ? star : nostar}
-                      onClick={onClickStar}
-                    />
-                  </TodoWrapper>
+                  <Todo users={user} id={user.id} status={user.status}/>
                 </div>
               );
             })}

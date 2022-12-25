@@ -6,6 +6,7 @@ import checked from './checked.svg';
 import star from './star.svg';
 import nostar from './nostar.svg';
 import detail from './detail.svg';
+import deleteIcon from './deleteIcon.svg';
 
 export {
   date,
@@ -16,4 +17,5 @@ export {
   star,
   nostar,
   detail,
+  deleteIcon,
 };
