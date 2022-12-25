@@ -12,9 +12,6 @@ import {
 } from './styled';
 import axios from 'axios';
 
-import { categorySelector } from '../../menu/atom';
-import { useRecoilValueLoadable } from 'recoil';
-
 function Add() {
   const [isTodo, setTodo] = useState('');
 
@@ -51,10 +48,17 @@ function Add() {
     }
   };
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const categoryResponse = useRecoilValueLoadable(categorySelector);
-  // 비동기 처리 응답이 아직 오지 않았을 경우
-  if (categoryResponse.state === 'loading') return <></>;
+  const [categoryResponse, setCategoryResponse] = useState([]);
+  const [change, setChange] = useState(0);
+  useEffect(() => {
+    async function getApi() {
+      const getCategory = await axios.get('http://localhost:9092/');
+      setCategoryResponse(getCategory.data);
+    }
+    getApi();
+  }, [change]);
+
+  const newResponse = () => setChange((change) => (change += 1));
 
   return (
     <AddWrapper>
@@ -65,9 +69,9 @@ function Add() {
           onChange={getValue}
           name="content"
         />
-        <Select>
+        <Select onClick={newResponse}>
           <option value={0}>카테고리</option>
-          {categoryResponse.contents.map((categoryItem) => {
+          {categoryResponse.map((categoryItem) => {
             // 배열 원소마다 option 생성
             return (
               <option value={categoryItem.categoryId}>
