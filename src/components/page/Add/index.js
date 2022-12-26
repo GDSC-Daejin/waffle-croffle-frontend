@@ -21,29 +21,18 @@ function Add() {
     console.log(isTodo);
   };
 
-  const [isView, setView] = useState([]);
   const onsubmit = () => {
-    // setView(isTodo({ ...isTodo }));
-    // console.log(isView);
     axios
       .post('http://localhost:9092/api/todos', isTodo)
       .then(function (response) {
-        console.log('ok');
+        // console.log('ok');
+        window.location.replace('/')
       })
       .catch(function (error) {
         console.log('error');
       });
   };
 
-  const postTodo = async () => {
-    try {
-      const result = await axios.post(
-        'http://localhost:9092/v3/api-docs/api/todos',
-      );
-    } catch (e) {
-      console.log('error', e);
-    }
-  };
 
   const [categoryResponse, setCategoryResponse] = useState([]);
   const [change, setChange] = useState(0);
@@ -55,7 +44,13 @@ function Add() {
     getApi();
   }, [change]);
 
+  const [categoryTitle, setCategoryTitle] = useState('');
   const newResponse = () => setChange((change) => (change += 1));
+  const handleChange = (e)=> {
+    setCategoryTitle(e.target.value);
+    console.log(categoryTitle);
+  }
+
 
   return (
     <AddWrapper>
@@ -66,8 +61,10 @@ function Add() {
           onChange={getValue}
           name="content"
         />
-        <Select onClick={newResponse}>
+        <Select onClick={newResponse} onChange={getValue} name='categoryTitle'>
           <option value={0}>카테고리</option>
+          <option value={'카테고리2'}>카테고리2</option>
+          <option value='카테고리3'>카테고리3</option>
           {categoryResponse.map((categoryItem) => {
             // 배열 원소마다 option 생성
             return (
@@ -79,11 +76,7 @@ function Add() {
         </Select>
       </AddInPutWrapper>
       <AddBtn
-        // Onclick={() => {
-        //   // setView(isView.concat({...isTodo}))
-        //   console.log(isView);
         onClick={onsubmit}
-        //}}
       >
         +
       </AddBtn>

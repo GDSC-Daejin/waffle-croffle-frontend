@@ -22,6 +22,7 @@ export const CategoryWrapper = styled.div`
   }
 `;
 export const CategoryBtn = styled.button`
+  display: flex;
   width: 180px;
   height: 45px;
   font-size: 16px;
@@ -31,7 +32,10 @@ export const CategoryBtn = styled.button`
   cursor: pointer;
   font-family: 'SeoulHangang', sans-serif;
   padding: 14px 16px 14px 30px;
-  text-align: left;
+  text-align: center;
+`;
+export const CategoryTitleW = styled.div`
+
 `;
 export const TrashLogo = styled.img`
   float: left;

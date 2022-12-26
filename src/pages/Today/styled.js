@@ -6,7 +6,7 @@ export const DateWrapper = styled.div`
   margin: 15px;
 `;
 
-export const Date = styled.div`
+export const TodayDate = styled.div`
   font-family: SeoulHangang, sans-serif;
   font-weight: bold;
   font-size: 17px;

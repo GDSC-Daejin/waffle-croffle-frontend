@@ -44,6 +44,10 @@ const Todo = ({users}) => {
 
   const onDelete = () => {
     axios.delete('http://localhost:9092/api/todos/' + users.id)
+      .then((function (response) {
+        alert('삭제!')
+          window.location.replace('/')
+      }));
   };
 
   console.log(users.id)
@@ -61,7 +65,7 @@ const Todo = ({users}) => {
       >
         <TodoContent>{users.content}</TodoContent>
         <TodoCategory>
-          카테고리
+          {users.categoryTitle}
         </TodoCategory>
       </TodoText>
       <TodoImg src={deleteIcon} onClick={onDelete}/>
