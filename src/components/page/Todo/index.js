@@ -16,18 +16,17 @@ import {
 } from '../../../assets/pageSvg/ExportSvg';
 import axios from 'axios';
 
-const Todo = ({users}) => {
+const Todo = ({ users }) => {
   const [isCheck, setCheck] = useState(false);
   const [isStar, setStar] = useState(false);
 
   const onClickImg = () => {
     setCheck(!isCheck);
-    axios.put('http://localhost:9092/api/todos/' + users.id)
+    axios.put('http://localhost:9092/api/todos/' + users.id);
   };
   const onClickStar = () => {
     setStar(!isStar);
   };
-
 
   const checkStar = () => {
     // setView(isTodo({ ...isTodo }));
@@ -43,10 +42,10 @@ const Todo = ({users}) => {
   };
 
   const onDelete = () => {
-    axios.delete('http://localhost:9092/api/todos/' + users.id)
+    axios.delete('http://localhost:9092/api/todos/' + users.id);
   };
 
-  console.log(users.id)
+  console.log(users);
 
   return (
     <TodoWrapper>
@@ -60,11 +59,9 @@ const Todo = ({users}) => {
         deco={isCheck ? 'line-through' : 'none'}
       >
         <TodoContent>{users.content}</TodoContent>
-        <TodoCategory>
-          카테고리
-        </TodoCategory>
+        <TodoCategory>{users.categoryEntity.categoryTitle}</TodoCategory>
       </TodoText>
-      <TodoImg src={deleteIcon} onClick={onDelete}/>
+      <TodoImg src={deleteIcon} onClick={onDelete} />
       <TodoImg src={isStar ? star : nostar} onClick={onClickStar} />
     </TodoWrapper>
   );
