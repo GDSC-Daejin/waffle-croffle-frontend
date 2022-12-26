@@ -42,7 +42,12 @@ const Todo = ({ users }) => {
   };
 
   const onDelete = () => {
-    axios.delete('http://localhost:9092/api/todos/' + users.id);
+    axios
+      .delete('http://localhost:9092/api/todos/' + users.id)
+      .then(function (response) {
+        alert('삭제!');
+        window.location.replace('/');
+      });
   };
 
   console.log(users);

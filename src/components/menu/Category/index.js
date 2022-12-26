@@ -10,9 +10,10 @@ import {
   CloseBtn,
   CategoryInput,
   CategoryTag,
-  CreateBtn,
+  CreateBtn, CategoryTitleW,
 } from './styled.js';
 import { trashLogo } from '../../../assets/menuSvg/ExportSvg.js';
+import { NavLink } from 'react-router-dom';
 
 const Category = () => {
   const [categoryResponse, setCategoryResponse] = useState([]);
@@ -23,6 +24,7 @@ const Category = () => {
       console.log(getCategory.data);
       setCategoryResponse(getCategory.data);
     }
+
     getApi();
   }, [change]);
 
@@ -54,6 +56,7 @@ const Category = () => {
       addCategory();
     }
   };
+
   // post API
   async function postCategoryApi() {
     await axios
@@ -61,10 +64,10 @@ const Category = () => {
         categoryId: 0,
         categoryTitle: input,
       })
-      .then(function (response) {
+      .then(function(response) {
         console.log(response);
       })
-      .catch(function (error) {
+      .catch(function(error) {
         console.log(error);
       });
   }
@@ -74,8 +77,14 @@ const Category = () => {
     alert('삭제되었습니다.');
     setChange((change) => (change += 1));
   }
+
   // 데이터 안옴
   if (categoryResponse === []) return <CategoryWrapper></CategoryWrapper>;
+
+  const categoryPage = () => {
+    // 클릭하면 해당 카테고리 페이지로 이동하게
+  };
+
   return (
     <>
       <CategoryWrapper>
@@ -83,12 +92,16 @@ const Category = () => {
           // 배열 원소마다 CategoryBtn을 생성
           return (
             <CategoryBtn key={categoryItem.categoryId}>
-              {categoryItem.categoryTitle}
               <TrashLogo
                 src={trashLogo}
-                alt="trash"
+                alt='trash'
                 onClick={() => deleteCategory(categoryItem.categoryId)}
               />
+              {/*<NavLink to={'/'+categoryItem.categoryId}>*/}
+              <CategoryTitleW>
+                {categoryItem.categoryTitle}
+                </CategoryTitleW>
+              {/*</NavLink>*/}
             </CategoryBtn>
           );
         })}

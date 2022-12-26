@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import {
-  Date,
   DateImgL,
   DateImgR,
   DateWrapper,
@@ -8,7 +7,7 @@ import {
   TodoImg,
   TodoText,
   TodoContent,
-  TodoCategory,
+  TodoCategory, TodayDate,
 } from './styled';
 import {
   check,
@@ -41,36 +40,44 @@ const Today = () => {
       .then((res) => setUsers(res.data));
   }, []);
 
-  const todayTime = () => {
-    let date = new Date();
-    let year = date.getFullYear();
-    let todayMonth = date.getMonth() + 1;
-    let todayDate = date.getDate()
-    const week = ['일', '월', '화', '수', '목', '금', '토'];
-    let dayOfWeek = week[date.getDay()];
-    return year + '년' + todayMonth + '월' + todayDate + '일' + dayOfWeek + '요일';
+  console.log(users);
+
+
+  const days = [
+    '화요일',
+    '수요일',
+    '목요일',
+    '금요일',
+    '토요일',
+    '일요일',
+    '월요일'
+  ];
+
+  const today = new Date(2022, 0, 1);
+
+// 요일 이름 출력하기
+  const dayName = days[today.getDay()];
+
+  function leftPad(value) {
+    if (value >= 10) {
+      return value;
+    }
+    return `0${value}`;
   }
+  function toStringByFormatting(source, delimiter = '-') {
+    const year = source.getFullYear();
+    const month = leftPad(source.getMonth() + 1);
+    const day = leftPad(source.getDate());
+    return [year, month, day].join(delimiter);
+  }
+  toStringByFormatting(new Date(2022, 0, 1));
+
 
   return (
     <TodayPageWrapper>
-      {/*<>*/}
-      {/*  <h1>Users</h1>*/}
-      {/*  <div users={users} />*/}
-      {/*</>*/}
-      {/*<div>*/}
-      {/*  <button onClick={() => console.log(users)}>dd</button>*/}
-      {/*  user.name*/}
-      {/*  <div>*/}
-      {/*    {users.map(user => {*/}
-      {/*      return (<Todo key={user.id}>*/}
-      {/*        {user.content}*/}
-      {/*      </Todo>)*/}
-      {/*    })}*/}
-      {/*  </div>*/}
-      {/*</div>*/}
       <DateWrapper>
         <DateImgL src={date} />
-        <Date>2022.12.25 일요일</Date>
+        <TodayDate>{toStringByFormatting(new Date(),'.')+' '+ dayName}</TodayDate>
         <DateImgR src={date} />
       </DateWrapper>
       <ListWrapper>
@@ -79,15 +86,12 @@ const Today = () => {
             {users.map((user) => {
               return (
                 <div key={user.id}>
-                  <Todo users={user} id={user.id} status={user.status}/>
+                  <Todo users={user} id={user.id} status={user.status} />
                 </div>
               );
             })}
           </div>
         </div>
-        {/*<Todo />*/}
-        {/*<Todo />*/}
-        {/*<Todo />*/}
       </ListWrapper>
       <Add />
     </TodayPageWrapper>

@@ -37,7 +37,8 @@ function Add() {
         },
       })
       .then(function (response) {
-        console.log('ok');
+        // console.log('ok');
+        window.location.replace('/');
       })
       .catch(function (error) {
         console.log('error');
@@ -66,6 +67,7 @@ function Add() {
     }
     getApi();
   }, [change]);
+
   const newResponse = () => setChange((change) => (change += 1));
 
   return (
