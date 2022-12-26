@@ -10,7 +10,8 @@ import {
   CloseBtn,
   CategoryInput,
   CategoryTag,
-  CreateBtn, CategoryTitleW,
+  CreateBtn,
+  CategoryTitleW,
 } from './styled.js';
 import { trashLogo } from '../../../assets/menuSvg/ExportSvg.js';
 import { NavLink } from 'react-router-dom';
@@ -64,10 +65,10 @@ const Category = () => {
         categoryId: 0,
         categoryTitle: input,
       })
-      .then(function(response) {
+      .then(function (response) {
         console.log(response);
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log(error);
       });
   }
@@ -94,13 +95,11 @@ const Category = () => {
             <CategoryBtn key={categoryItem.categoryId}>
               <TrashLogo
                 src={trashLogo}
-                alt='trash'
+                alt="trash"
                 onClick={() => deleteCategory(categoryItem.categoryId)}
               />
               {/*<NavLink to={'/'+categoryItem.categoryId}>*/}
-              <CategoryTitleW>
-                {categoryItem.categoryTitle}
-                </CategoryTitleW>
+              <CategoryTitleW>{categoryItem.categoryTitle}</CategoryTitleW>
               {/*</NavLink>*/}
             </CategoryBtn>
           );

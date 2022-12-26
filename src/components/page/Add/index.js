@@ -13,21 +13,10 @@ function Add() {
   // 투두 값 입력을 useState로 받음
   const [isTodo, setTodo] = useState('');
   const getValue = (e) => {
-    /*const { name, value } = e.target;
-    setTodo({
-      ...isTodo,
-      [name]: value,
-    });
-  console.log(isTodo);*/
     setTodo(e.target.value);
   };
 
-  const [isView, setView] = useState([]); //넌 뭐니
-
-  //post todo 함수
   const postTodo = () => {
-    // setView(isTodo({ ...isTodo }));
-    // console.log(isView);
     axios
       .post('http://localhost:9092/api/todos/' + postId, {
         content: isTodo,
@@ -100,15 +89,7 @@ function Add() {
           })}
         </Select>
       </AddInPutWrapper>
-      <AddBtn
-        // Onclick={() => {
-        //   // setView(isView.concat({...isTodo}))
-        //   console.log(isView);
-        onClick={postTodo}
-        //}}
-      >
-        +
-      </AddBtn>
+      <AddBtn onClick={postTodo}>+</AddBtn>
     </AddWrapper>
   );
 }
